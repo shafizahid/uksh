@@ -27,7 +27,66 @@ get_header(); ?>
             </div> 
 
             <div class="row">
-            	<?php $query = new WP_Query('category_name=cytometry&showposts=4&order=ASC');
+            <div class="col-md-12 p-0 mt-4"> <h4 class="mb-1">Cell Analyzer</h4></div>
+            	<?php $query = new WP_Query('category_name=cell-analyzer&showposts=4&order=ASC');
+                    while ($query->have_posts()) :
+                    $query->the_post(); ?>
+                     <div class="col-md-3 pl-0 memberBox">
+               <div class="productbox">
+               	<div class="entry-content">
+                <h4><?php the_title();?></h4>
+                <button type="button" data-toggle="modal" data-target="#table1">
+                <?php the_post_thumbnail(); ?></button>
+                  <!-- Modal -->
+                <div id="table1" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <?php the_content();?>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+               </div>
+             <?php endwhile; ?>
+        </div>
+        <div class="row">
+        <div class="col-md-12 p-0 mt-4"> <h4 class="mb-1">Cell Sorter</h4></div>
+            	<?php $query = new WP_Query('category_name=cell-sorter&showposts=4&order=ASC');
+                    while ($query->have_posts()) :
+                    $query->the_post(); ?>
+                     <div class="col-md-3 pl-0 memberBox">
+               <div class="productbox">
+               	<div class="entry-content">
+                <h4><?php the_title();?></h4>
+                <button type="button" data-toggle="modal" data-target="#table1">
+                <?php the_post_thumbnail(); ?></button>
+                  <!-- Modal -->
+                <div id="table1" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <?php the_content();?>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+           </div>
+               </div>
+             <?php endwhile; ?>
+        </div>
+        <div class="row">
+        <div class="col-md-12 p-0 mt-4"> <h4 class="mb-1">Cell Imaging</h4></div>
+            	<?php $query = new WP_Query('category_name=cell-imaging&showposts=4&order=ASC');
                     while ($query->have_posts()) :
                     $query->the_post(); ?>
                      <div class="col-md-3 pl-0 memberBox">
